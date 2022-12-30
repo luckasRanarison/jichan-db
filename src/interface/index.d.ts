@@ -12,8 +12,8 @@ export interface Kanji {
     jlpt: number;
     regular_on: string;
     regular_kun: string;
-    on: string;
-    kun: string;
+    onyomi: string;
+    kunyomi: string;
     nanori: string;
     selected_meaning: string;
     meaning: string;
@@ -24,8 +24,8 @@ export interface Kanji {
  */
 export interface KanjiOption {
     meaning: string;
-    on: string;
-    kun: string;
+    onyomi: string;
+    kunyomi: string;
     nanori: string;
     radical: string;
     stroke: number;

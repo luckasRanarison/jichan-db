@@ -37,10 +37,10 @@ class KanjiDic extends seq.Model<KanjiDic> implements Kanji {
     regular_kun: string;
 
     @seq.Column({ type: seq.DataType.TEXT })
-    on: string;
+    onyomi: string;
 
     @seq.Column({ type: seq.DataType.TEXT })
-    kun: string;
+    kunyomi: string;
 
     @seq.Column({ type: seq.DataType.TEXT })
     nanori: string;

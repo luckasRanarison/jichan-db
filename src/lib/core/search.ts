@@ -14,11 +14,11 @@ export const searchKanji = async (
     if (isLiteralSearch) {
         filters[Op.and].push({ character: character });
     } else {
-        if (isRomaji(option.on) || isHiragana(option.on)) {
-            option.on = toKatakana(option.on);
+        if (isRomaji(option.onyomi) || isHiragana(option.onyomi)) {
+            option.onyomi = toKatakana(option.onyomi);
         }
-        if (isRomaji(option.kun)) {
-            option.kun = toHiragana(option.kun);
+        if (isRomaji(option.kunyomi)) {
+            option.kunyomi = toHiragana(option.kunyomi);
         }
         if (isRomaji(option.nanori)) {
             option.nanori = toHiragana(option.nanori);
@@ -34,8 +34,8 @@ export const searchKanji = async (
 
         const optionFilter = [
             { filter: "meaning", value: { [Op.like]: `%${option.meaning}%` } },
-            { filter: "on", value: { [Op.like]: `%${option.on}%` } },
-            { filter: "kun", value: { [Op.like]: `%${option.kun}%` } },
+            { filter: "onyomi", value: { [Op.like]: `%${option.onyomi}%` } },
+            { filter: "kunyomi", value: { [Op.like]: `%${option.kunyomi}%` } },
             { filter: "nanori", value: { [Op.like]: `%${option.nanori}%` } },
             { filter: "radical", value: radicalList },
             { filter: "stroke", value: option.stroke },
